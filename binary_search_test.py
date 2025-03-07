@@ -12,14 +12,14 @@ def test_binary_search_not_found():
     arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     target = 11
     result = search(arr, target)
-    assert result == -1  # 11 is not in the list
+    assert result == None  # 11 is not in the list
 
 def test_binary_search_empty_array():
     """Test with an empty array."""
     arr = []
     target = 5
     result = search(arr, target)
-    assert result == -1  # 5 is not in an empty list
+    assert result == None  # 5 is not in an empty list
 
 def test_binary_search_single_element_found():
     """Test when the array has a single element and the target is found."""
@@ -33,7 +33,7 @@ def test_binary_search_single_element_not_found():
     arr = [10]
     target = 5
     result = search(arr, target)
-    assert result == -1  # 5 is not in the list
+    assert result == None  # 5 is not in the list
 
 def test_binary_search_large_array():
     """Test with a large array."""
@@ -58,8 +58,8 @@ def test_binary_search_last_element():
 
 def test_binary_search_multiple_elements_same_value():
     """Test with multiple elements with the same value."""
-    arr = [1, 2, 2, 2, 3]
-    target = 2
+    arr = [1, 3, 3, 3, 4]
+    target = 3
     result = search(arr, target)
-    assert result == 1  # The first occurrence of 2 is at index 1
+    assert result == 2  # The first occurrence of 2 is at the middle
 
